@@ -234,7 +234,7 @@ img { max-width: 100%; display: block; }
   color: var(--text-2); line-height: 1.85; margin-bottom: 14px; font-size: 1rem;
 }
 
-.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .stat-card {
   text-align: center; padding: 32px 20px;
   background: var(--bg-card); border: 1px solid var(--border);
@@ -510,7 +510,7 @@ body.dark-mode .footer { background: #010409; }
   .about-content { grid-template-columns: 1fr; gap: 28px; }
   .about-photo { text-align: center; }
   .about-photo img { width: 220px; margin: 0 auto; }
-  .stats-row { gap: 14px; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .stat-card { padding: 24px 12px; }
   .stat-number { font-size: 2rem; }
 
