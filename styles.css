@@ -176,7 +176,20 @@ img { max-width: 100%; display: block; }
     radial-gradient(ellipse at 20% 40%, rgba(196,149,92,.06), transparent 50%),
     radial-gradient(ellipse at 80% 60%, rgba(196,149,92,.04), transparent 50%);
 }
-.hero-content { position: relative; z-index: 2; max-width: 760px; }
+.hero-split {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  gap: 60px; max-width: 1000px; width: 100%;
+}
+.hero-photo {
+  flex: 0 0 auto;
+}
+.hero-photo img {
+  width: 280px; height: 280px; object-fit: cover; object-position: top;
+  border-radius: 50%; border: 4px solid rgba(196,149,92,.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+}
+.hero-content { position: relative; z-index: 2; max-width: 560px; text-align: left; }
 .hero-badge {
   display: inline-block; padding: 8px 24px;
   border: 1px solid rgba(196,149,92,.35); border-radius: 24px;
@@ -192,7 +205,7 @@ img { max-width: 100%; display: block; }
   color: rgba(255,255,255,.6); font-style: italic; margin-bottom: 32px;
 }
 .hero-roles {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center;
   flex-wrap: wrap; gap: 10px 14px; margin-bottom: 44px;
 }
 .role-tag { color: rgba(255,255,255,.9); font-size: clamp(.9rem, 2vw, 1.05rem); font-weight: 400; }
@@ -352,6 +365,11 @@ img { max-width: 100%; display: block; }
 }
 .book-face-author { font-size: .58rem; opacity: .65; }
 
+.book-cover-img { flex: 0 0 110px; }
+.book-cover-img img {
+  width: 110px; height: 150px; object-fit: cover;
+  border-radius: 3px; box-shadow: 4px 4px 12px rgba(0,0,0,.15);
+}
 .book-info { flex: 1; min-width: 0; }
 .book-info h3 { font-size: 1.15rem; margin-bottom: 8px; line-height: 1.35; }
 .book-info p { font-size: 1rem; color: var(--text-2); margin-bottom: 10px; line-height: 1.65; }
@@ -507,6 +525,12 @@ body.dark-mode .footer { background: #010409; }
   .section { padding: 72px 0; }
   .section-header { margin-bottom: 40px; }
   .hero { padding: 88px 24px 52px; }
+  .hero-split {
+    flex-direction: column; gap: 32px; text-align: center;
+  }
+  .hero-photo img { width: 200px; height: 200px; }
+  .hero-content { text-align: center; }
+  .hero-roles { justify-content: center; }
   .hero-badge { margin-bottom: 22px; }
   .hero-roles { margin-bottom: 32px; }
   .hero-scroll-hint { bottom: 20px; }
