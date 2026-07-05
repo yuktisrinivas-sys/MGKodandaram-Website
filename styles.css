@@ -294,6 +294,10 @@ img { max-width: 100%; display: block; }
   margin-bottom: 10px;
 }
 .timeline-content h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.timeline-img {
+  width: 100%; border-radius: 6px; margin: 10px 0;
+  box-shadow: var(--shadow-sm); object-fit: cover; max-height: 200px;
+}
 .timeline-content p { color: var(--text-2); font-size: 1rem; line-height: 1.7; }
 
 /* ===== Expertise ===== */
