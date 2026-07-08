@@ -537,7 +537,7 @@ body.dark-mode .footer { background: #010409; }
 
   .about-content { grid-template-columns: 1fr; gap: 28px; }
   .about-photo { text-align: center; }
-  .about-photo img { width: 220px; margin: 0 auto; }
+  .about-photo img { width: 220px; max-height: 280px; object-fit: cover; object-position: top; margin: 0 auto; border-radius: var(--radius); }
   .stats-row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .stat-card { padding: 24px 12px; }
   .stat-number { font-size: 2rem; }
