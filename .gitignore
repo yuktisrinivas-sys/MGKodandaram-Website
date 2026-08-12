@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Editor / tooling
+.claude/
+
+# Full-resolution source photos: the web-sized versions in images/ are what
+# the site loads. Keeping the multi-megabyte originals out of git history.
+images/mgk-blue-vest.jpg
+images/mgk-golden-vest.jpg
+images/privacy-award.jpg
+images/privacy-award.png

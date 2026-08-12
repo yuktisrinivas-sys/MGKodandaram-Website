@@ -4,37 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>M. G. Kodandaram, IRS — GST Master Trainer | Advocate | Author</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="M. G. Kodandaram, IRS (Retd.) — Assistant Director of NACIN (1981–2018), GST Master Trainer for CBIC, Advocate, Consultant and author of six books on GST law.">
+  <meta name="author" content="M. G. Kodandaram">
+  <meta name="theme-color" content="#0a1727">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="M. G. Kodandaram, IRS (Retd.) — GST Master Trainer, Advocate, Author">
+  <meta property="og:description" content="Nearly four decades in the Indian Revenue Service, 3,126 training sessions, 405 published articles, and six books on GST law.">
+  <meta property="og:image" content="images/mgk-blazer-portrait.jpg">
+  <link rel="icon" href="images/mgk-profile.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Applies saved appearance before first paint so the theme never flashes. */
+    (function () {
+      try {
+        var t = localStorage.getItem('theme') || 'light';
+        var dark = t === 'dark' || (t === 'auto' &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = t;
+        document.documentElement.dataset.bootDark = dark ? '1' : '0';
+        document.documentElement.dataset.bootAccent = localStorage.getItem('accent') || 'gold';
+        document.documentElement.dataset.bootFont = localStorage.getItem('fontSize') || 'medium';
+        if (!sessionStorage.getItem('splashSeen')) document.documentElement.dataset.splash = '1';
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
-  <!-- Settings Panel -->
-  <button class="settings-toggle" id="settingsToggle" aria-label="Settings">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-  </button>
-  <div class="settings-panel" id="settingsPanel">
-    <h3>Display</h3>
+  <!-- Intro screen -->
+  <div class="splash" id="splash" role="presentation">
+    <div class="splash-inner">
+      <div class="splash-emblem">
+        <svg class="splash-ring" viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-track" cx="60" cy="60" r="54"/>
+          <circle class="ring-draw" cx="60" cy="60" r="54"/>
+        </svg>
+        <span class="splash-monogram">MGK</span>
+      </div>
+      <p class="splash-name">M. G. Kodandaram</p>
+      <p class="splash-sub">Indian Revenue Service &middot; Retd.</p>
+      <p class="splash-motto">Learn, Grow, Succeed</p>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="nav-scrim" id="navScrim"></div>
+
+  <!-- Appearance controls -->
+  <div class="fab-stack">
+    <button class="to-top" id="toTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+    <button class="settings-toggle" id="settingsToggle" aria-label="Appearance settings" aria-expanded="false" aria-controls="settingsPanel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+    </button>
+  </div>
+
+  <div class="settings-panel" id="settingsPanel" role="dialog" aria-label="Appearance settings">
+    <div class="settings-head">
+      <h3>Appearance</h3>
+      <button class="settings-close" id="settingsClose" aria-label="Close settings">&times;</button>
+    </div>
     <div class="setting-group">
-      <label>Theme</label>
-      <div class="setting-buttons">
-        <button class="setting-btn active" data-theme="light">Light</button>
-        <button class="setting-btn" data-theme="dark">Dark</button>
+      <label id="lbl-theme">Theme</label>
+      <div class="setting-buttons" role="group" aria-labelledby="lbl-theme">
+        <button class="setting-btn" data-theme="light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+          <span>Light</span>
+        </button>
+        <button class="setting-btn" data-theme="dark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 019.5 4a7 7 0 1010.5 10.5z"/></svg>
+          <span>Dark</span>
+        </button>
+        <button class="setting-btn" data-theme="auto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/></svg>
+          <span>Auto</span>
+        </button>
       </div>
     </div>
     <div class="setting-group">
-      <label>Font Size</label>
-      <div class="setting-buttons">
-        <button class="setting-btn" data-size="small">A<small>-</small></button>
-        <button class="setting-btn active" data-size="medium">A</button>
-        <button class="setting-btn" data-size="large">A<small>+</small></button>
+      <label id="lbl-accent">Accent</label>
+      <div class="swatch-row" role="group" aria-labelledby="lbl-accent">
+        <button class="swatch sw-gold" data-accent="gold" aria-label="Antique gold"></button>
+        <button class="swatch sw-royal" data-accent="royal" aria-label="Royal blue"></button>
+        <button class="swatch sw-emerald" data-accent="emerald" aria-label="Emerald"></button>
+        <button class="swatch sw-crimson" data-accent="crimson" aria-label="Crimson"></button>
+      </div>
+    </div>
+    <div class="setting-group">
+      <label id="lbl-size">Text size</label>
+      <div class="setting-buttons" role="group" aria-labelledby="lbl-size">
+        <button class="setting-btn" data-size="small"><span>A</span></button>
+        <button class="setting-btn" data-size="medium"><span>A</span></button>
+        <button class="setting-btn" data-size="large"><span>A</span></button>
       </div>
     </div>
   </div>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
-    <div class="nav-brand">M. G. Kodandaram</div>
+    <a class="nav-brand" href="#home">M. G. Kodandaram</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -46,14 +118,18 @@
       <li><a href="#videos">Videos</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="bars"><span></span><span></span><span></span></span>
     </button>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-overlay"></div>
+    <div class="hero-motes" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
     <div class="hero-split">
       <div class="hero-photo">
         <img src="images/mgk-blazer-portrait.jpg" alt="M. G. Kodandaram, IRS (Retd.)">
@@ -86,7 +162,7 @@
       </div>
       <div class="about-content">
         <div class="about-photo">
-          <img src="images/mgk-thumbsup.jpg" alt="M. G. Kodandaram, IRS (Retd.)">
+          <img src="images/mgk-thumbsup-sm.jpg" alt="M. G. Kodandaram, IRS (Retd.)" loading="lazy" decoding="async">
         </div>
         <div class="about-text">
           <p class="about-lead">
@@ -111,19 +187,19 @@
       </div>
       <div class="stats-row">
         <div class="stat-card anim">
-          <span class="stat-number">37+</span>
+          <span class="stat-number" data-count="37" data-suffix="+">37+</span>
           <span class="stat-label">Years in Government Service</span>
         </div>
         <div class="stat-card anim">
-          <span class="stat-number">3,126</span>
+          <span class="stat-number" data-count="3126">3,126</span>
           <span class="stat-label">Training Sessions Conducted</span>
         </div>
         <div class="stat-card anim">
-          <span class="stat-number">405</span>
+          <span class="stat-number" data-count="405">405</span>
           <span class="stat-label">Articles Published</span>
         </div>
         <div class="stat-card anim">
-          <span class="stat-number">80+</span>
+          <span class="stat-number" data-count="80" data-suffix="+">80+</span>
           <span class="stat-label">Training Institutes</span>
         </div>
       </div>
@@ -198,9 +274,9 @@
       <div class="timeline">
         <div class="timeline-item left anim">
           <div class="timeline-content">
-            <div class="timeline-year">1981</div>
+            <div class="timeline-year">1981&ndash;2018</div>
             <h3>Joined Indian Revenue Service</h3>
-            <p>Began a distinguished career in the IRS on 30 December 1981, joining the National Academy of Customs, Excise &amp; Narcotics (NACEN) in Bengaluru.</p>
+            <p>Began a distinguished career with CBIC on 30 December 1981, and retired, on superannuation, from Government service on 31 May 2018, as the Assistant Director of the National Academy of Customs, Indirect Taxes &amp; Narcotics (NACIN) in Bengaluru.</p>
           </div>
         </div>
         <div class="timeline-item right anim">
@@ -214,7 +290,7 @@
           <div class="timeline-content highlight">
             <div class="timeline-year">Oct 2017</div>
             <h3>Felicitated by Finance Minister</h3>
-            <img src="images/fm-award.jpg" alt="M. G. Kodandaram felicitated by Finance Minister Shri Arun Jaitley" class="timeline-img">
+            <img src="images/fm-award.jpg" alt="M. G. Kodandaram receiving the Outstanding Faculty award from Finance Minister Shri Arun Jaitley" class="timeline-img" loading="lazy" decoding="async">
             <p>Honoured by Shri Arun Jaitley, Finance Minister of India, as the <strong>Outstanding Faculty of NACIN</strong> on NACIN&rsquo;s Founding Day for exceptional contributions to training and capacity building.</p>
           </div>
         </div>
@@ -243,29 +319,33 @@
           <div class="timeline-content highlight">
             <div class="timeline-year">Sep 2022</div>
             <h3>Book Released by CBIC Chairman</h3>
-            <p>Shri Vivek Johri, Chairman of CBIC, released <em>GST Law &ndash; Ready Reckoner</em> authored by M. G. Kodandaram at Central Revenue Building, Bangalore.</p>
+            <img src="images/gst-ready-reckoner.jpg" alt="GST Law Ready Reckoner book cover" class="timeline-img" loading="lazy" decoding="async">
+            <p>Shri Vivek Johri, Chairman of CBIC, released <em>GST Law &ndash; Ready Reckoner</em> authored by M. G. Kodandaram at Central Revenue Building, Bangalore on 12.09.2022.</p>
           </div>
         </div>
         <div class="timeline-item right anim">
           <div class="timeline-content highlight">
             <div class="timeline-year">Nov 2023</div>
             <h3>Privacy Advocate of the Year</h3>
-            <p>Received the <strong>&lsquo;Privacy Advocate of the Year 2023&rsquo;</strong> award at the IDPS 2023 International Privacy Summit conducted by FDPPI and Manipal Law School, from Hon. Dr. Justice H. B. Prabhakara Shastri.</p>
+            <img src="images/privacy-award-sm.jpg" alt="M. G. Kodandaram receiving the Privacy Advocate of the Year 2023 award" class="timeline-img" loading="lazy" decoding="async">
+            <p>Received the <strong>&lsquo;Privacy Advocate of the Year 2023&rsquo;</strong> award at the IDPS 2023 International Privacy Summit conducted by FDPPI and Manipal Law School, from Hon. Dr. Justice H. B. Prabhakara Shastri on 25 November 2023.</p>
           </div>
         </div>
         <div class="timeline-item left anim">
           <div class="timeline-content highlight">
             <div class="timeline-year">Oct 2025</div>
             <h3>Two New Books Released</h3>
-            <p>Shri B.V. Kumar, IRS (Retd.), Former Member of CBIC, released two new books: <em>&ldquo;Moving Towards Citizen Centric &ndash; GST Laws in India&rdquo;</em> and <em>&ldquo;New NextGen GST 2.0 Reforms with Rates &amp; Exemptions&rdquo;</em> at Cauvery Hall, Central Revenue Building, Bangalore.</p>
+            <img src="images/book-citizen-centric.png" alt="Moving Towards Citizen Centric GST Laws in India book cover" class="timeline-img" loading="lazy" decoding="async">
+            <p>Shri B.V. Kumar, IRS (Retd.), Former Member of CBIC, released two new books: <em>&ldquo;Moving Towards Citizen Centric &ndash; GST Laws in India&rdquo;</em> and <em>&ldquo;New NextGen GST 2.0 Reforms with Rates &amp; Exemptions&rdquo;</em> at Cauvery Hall, Central Revenue Building, Bangalore on 11.10.2025.</p>
           </div>
         </div>
         <div class="timeline-item right anim">
           <div class="timeline-content">
             <div class="timeline-year">Ongoing</div>
             <h3>Guest Faculty &amp; Mentor</h3>
-            <img src="images/mgk-workshop.jpg" alt="M. G. Kodandaram at a workshop" class="timeline-img">
-            <p>Serves as guest faculty across 27+ colleges and 36+ training institutes, educating the next generation of tax and legal professionals.</p>
+            <img src="images/mgk-workshop.jpg" alt="M. G. Kodandaram at a training workshop" class="timeline-img" loading="lazy" decoding="async">
+            <p>Serves as guest faculty across <a href="institutes.html" class="text-link">27+ colleges and 36+ training institutes</a>, educating the next generation of tax and legal professionals.</p>
+            <p><a href="institutes.html" class="text-link strong">View the full list &rarr;</a></p>
           </div>
         </div>
       </div>
@@ -506,12 +586,97 @@
     </div>
   </section>
 
+  <!-- Gallery Section -->
+  <section id="gallery" class="section alt-bg">
+    <div class="container">
+      <div class="section-header unnamed">
+        <div class="section-line"></div>
+      </div>
+      <div class="gallery-grid">
+        <button type="button" class="gallery-item wide anim" data-cap="A lifelong student of the scriptures &mdash; with a volume of the Veda Bhagavan">
+          <img src="images/mgk-veda-bhagavan.jpg" alt="M. G. Kodandaram holding a volume of the Veda Bhagavan" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>With a volume of the Veda Bhagavan</strong>
+            <span>Among the books of his study</span>
+          </span>
+        </button>
+        <button type="button" class="gallery-item anim" data-cap="Receiving the Outstanding Faculty of NACIN award from Shri Arun Jaitley, Finance Minister of India, on NACIN&rsquo;s Founding Day, October 2017">
+          <img src="images/fm-award.jpg" alt="M. G. Kodandaram receiving an award from Finance Minister Shri Arun Jaitley" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>Honoured by the Finance Minister</strong>
+            <span>Shri Arun Jaitley &middot; Oct 2017</span>
+          </span>
+        </button>
+        <button type="button" class="gallery-item anim" data-cap="Receiving the &lsquo;Privacy Advocate of the Year 2023&rsquo; award at the IDPS 2023 International Privacy Summit">
+          <img src="images/privacy-award-sm.jpg" alt="M. G. Kodandaram receiving the Privacy Advocate of the Year 2023 award" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>Privacy Advocate of the Year</strong>
+            <span>IDPS 2023 Privacy Summit</span>
+          </span>
+        </button>
+        <button type="button" class="gallery-item anim" data-cap="At his desk &mdash; four decades on, still writing and teaching">
+          <img src="images/mgk-working-sm.jpg" alt="M. G. Kodandaram working at his desk" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>At his desk</strong>
+            <span>Still writing, still teaching</span>
+          </span>
+        </button>
+        <button type="button" class="gallery-item anim" data-cap="At a training workshop">
+          <img src="images/mgk-workshop.jpg" alt="M. G. Kodandaram at a training workshop" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>At a workshop</strong>
+            <span>One of 3,126 sessions</span>
+          </span>
+        </button>
+        <button type="button" class="gallery-item anim" data-cap="Addressing a gathering">
+          <img src="images/speaking.jpg" alt="M. G. Kodandaram addressing a gathering" class="focus-top" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>Addressing a gathering</strong>
+            <span>On the floor, microphone in hand</span>
+          </span>
+        </button>
+        <button type="button" class="gallery-item anim" data-cap="A familiar smile">
+          <img src="images/mgk-smile.jpg" alt="Portrait of M. G. Kodandaram smiling" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>A familiar smile</strong>
+          </span>
+        </button>
+        <button type="button" class="gallery-item anim" data-cap="A candid portrait">
+          <img src="images/mgk-golden-vest-sm.jpg" alt="Candid portrait of M. G. Kodandaram" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>A candid portrait</strong>
+          </span>
+        </button>
+        <button type="button" class="gallery-item anim" data-cap="Portrait">
+          <img src="images/mgk-vest-portrait-sm.jpg" alt="Portrait of M. G. Kodandaram" class="focus-face" loading="lazy" decoding="async">
+          <span class="gallery-cap">
+            <strong>Portrait</strong>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">&times;</button>
+    <span class="lightbox-count" id="lightboxCount"></span>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <p class="lightbox-cap" id="lightboxCap"></p>
+  </div>
+
   <!-- Quote Section -->
   <section class="quote-section">
     <div class="container">
       <div class="quote-layout">
         <div class="quote-photo">
-          <img src="images/mgk-smile.jpg" alt="M. G. Kodandaram">
+          <img src="images/mgk-blue-vest-sm.jpg" alt="M. G. Kodandaram" loading="lazy" decoding="async">
         </div>
         <blockquote>
           <p>&ldquo;Knowledge is the most powerful tool for nation building. When we train one officer well, we serve a million citizens better.&rdquo;</p>
@@ -564,78 +729,6 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile nav
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      navToggle.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        navLinks.classList.remove('open');
-        navToggle.classList.remove('active');
-      });
-    });
-
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // Scroll reveal with fallback
-    const animEls = document.querySelectorAll('.anim');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-    animEls.forEach(el => observer.observe(el));
-    setTimeout(() => { animEls.forEach(el => el.classList.add('visible')); }, 2500);
-
-    // Settings panel
-    const settingsToggle = document.getElementById('settingsToggle');
-    const settingsPanel = document.getElementById('settingsPanel');
-    settingsToggle.addEventListener('click', e => { e.stopPropagation(); settingsPanel.classList.toggle('open'); });
-    document.addEventListener('click', e => { if (!settingsPanel.contains(e.target)) settingsPanel.classList.remove('open'); });
-
-    // Theme
-    document.querySelectorAll('[data-theme]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('[data-theme]').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.body.classList.toggle('dark-mode', btn.dataset.theme === 'dark');
-        localStorage.setItem('theme', btn.dataset.theme);
-      });
-    });
-
-    // Font size
-    document.querySelectorAll('[data-size]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('[data-size]').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.body.classList.remove('font-small', 'font-medium', 'font-large');
-        document.body.classList.add('font-' + btn.dataset.size);
-        localStorage.setItem('fontSize', btn.dataset.size);
-      });
-    });
-
-    // Restore saved settings
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark-mode');
-      document.querySelector('[data-theme="light"]').classList.remove('active');
-      document.querySelector('[data-theme="dark"]').classList.add('active');
-    }
-    const sz = localStorage.getItem('fontSize');
-    if (sz) {
-      document.querySelectorAll('[data-size]').forEach(b => b.classList.remove('active'));
-      document.querySelector('[data-size="' + sz + '"]')?.classList.add('active');
-      document.body.classList.add('font-' + sz);
-    }
-  </script>
+  <script src="app.js" defer></script>
 </body>
 </html>
