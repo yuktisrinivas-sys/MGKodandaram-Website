@@ -1036,6 +1036,12 @@ body.dark-mode .footer { background: linear-gradient(180deg, #060c15 0%, #04090f
 }
 
 @media (max-width: 768px) {
+  /* A larger root scale lifts every rem-based size together, so captions,
+     labels and meta text stay legible on a handset without the layout
+     proportions drifting away from the desktop design. */
+  html { font-size: 18px; }
+  :root { --font-base: 1rem; }
+
   .nav-toggle { display: flex; }
 
   /* Slide-in drawer with its own dark surface, so text is always legible */
@@ -1091,7 +1097,7 @@ body.dark-mode .footer { background: linear-gradient(180deg, #060c15 0%, #04090f
   .hero { padding: 92px 24px 56px; }
   .hero-overlay::after { inset: 12px; }
   .hero-split { flex-direction: column; gap: 34px; text-align: center; }
-  .hero-photo img { width: 200px; height: 200px; }
+  .hero-photo img { width: 224px; height: 224px; }
   .hero-photo::before { inset: -10px; }
   .hero-content { text-align: center; }
   .hero-title::after { margin-left: auto; margin-right: auto; }
@@ -1108,19 +1114,24 @@ body.dark-mode .footer { background: linear-gradient(180deg, #060c15 0%, #04090f
   .about-photo { text-align: center; }
   .about-photo::before { display: none; }
   .about-photo img {
-    width: 230px; max-height: 290px; object-fit: cover; object-position: top;
+    width: 262px; max-height: 330px; object-fit: cover; object-position: top;
     margin: 0 auto; border-radius: var(--radius);
   }
   .about-lead { font-size: 1.05rem; }
   .stats-row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .stat-card { padding: 26px 12px; }
-  .stat-number { font-size: 2rem; }
+  .stat-number { font-size: 2.1rem; }
+  .stat-label { font-size: .85rem; }
 
   .career-grid { grid-template-columns: 1fr; gap: 20px; }
 
   .timeline::before { left: 18px; }
-  .timeline-item {
-    width: 100%; left: 0 !important; text-align: left;
+  /* Single column: every entry sits left of the rail, overriding the
+     alternating desktop layout (which is more specific). */
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%; left: 0; text-align: left;
     padding: 10px 10px 10px 48px;
   }
   .timeline-item::after { left: 12px !important; right: auto !important; }
@@ -1128,23 +1139,39 @@ body.dark-mode .footer { background: linear-gradient(180deg, #060c15 0%, #04090f
   .expertise-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .expertise-card { padding: 24px 16px; }
 
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; gap: 12px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 168px; gap: 12px; }
   .gallery-item.wide { grid-column: span 2; grid-row: span 2; }
-  .gallery-cap { padding: 26px 12px 12px; font-size: .82rem; }
-  .gallery-cap span { font-size: .74rem; }
+  .gallery-cap { padding: 26px 12px 12px; font-size: .85rem; }
+  .gallery-cap span { font-size: .78rem; }
 
   .book-card { flex-direction: column; align-items: center; text-align: center; }
-  .book-cover { flex: none; }
+  .book-cover, .book-cover-img { flex: none; }
+  .book-face, .book-cover-img img { width: 132px; height: 182px; }
+  .book-face-title { font-size: .82rem; }
+  .book-face-author { font-size: .66rem; }
+  .book-meta { font-size: .85rem; }
+
+  .hero-badge { font-size: .84rem; }
+  .role-tag { font-size: 1rem; }
+  .timeline-year { font-size: .82rem; }
+  .expertise-card p { font-size: .95rem; }
+  .article-title { font-size: 1rem; }
+  .article-meta { font-size: .82rem; }
+  .footer-role { font-size: .9rem; }
+  .footer-copy { font-size: .82rem; }
 
   .videos-grid { max-width: 100%; }
 
   .quote-layout { flex-direction: column; gap: 28px; }
-  .quote-photo img { width: 116px; height: 116px; }
+  .quote-photo img { width: 136px; height: 136px; }
   blockquote::before { top: -38px; font-size: 4rem; }
 
   .social-links { gap: 10px; }
   .social-link { padding: 11px 18px; font-size: .9rem; }
   .form-row { grid-template-columns: 1fr; }
+
+  /* Extra room so the floating buttons never sit on top of the closing text */
+  .footer { padding-bottom: 84px; }
 
   .fab-stack { bottom: 14px; right: 14px; gap: 9px; }
   .settings-toggle, .to-top { width: 44px; height: 44px; }
@@ -1167,17 +1194,25 @@ body.dark-mode .footer { background: linear-gradient(180deg, #060c15 0%, #04090f
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
   .section { padding: 56px 0; }
-  .hero-title { font-size: 2.2rem; }
-  .hero-badge { font-size: .72rem; padding: 6px 16px; letter-spacing: .1em; }
+  .hero-title { font-size: 2.1rem; }
+  .hero-badge { font-size: .8rem; padding: 7px 16px; letter-spacing: .08em; }
   .stats-row { grid-template-columns: 1fr; }
+  .stat-card { padding: 24px 16px; }
   .expertise-grid { grid-template-columns: 1fr; }
-  .section-title { font-size: 1.8rem; }
+  .section-title { font-size: 1.75rem; }
   .social-links { flex-direction: column; align-items: stretch; }
   .social-link { justify-content: center; }
   .article-item { padding: 14px; gap: 10px; }
   .article-icon { display: none; }
-  .article-title { font-size: .95rem; }
+  .article-title { font-size: .98rem; }
   .gallery-item:not(.wide) .gallery-cap span { display: none; }
+}
+
+/* Compact handsets: ease the scale back so the larger type still fits */
+@media (max-width: 360px) {
+  html { font-size: 17px; }
+  .hero-photo img { width: 200px; height: 200px; }
+  .gallery-grid { grid-auto-rows: 148px; }
 }
 
 @media print {
